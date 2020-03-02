@@ -13,7 +13,10 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.0",
-    "nuxt": "^2.11.0"
+    "drag-controls": "^1.0.4",
+    "nuxt": "^2.11.0",
+    "three": "^0.113.2",
+    "three-gltf-loader": "^1.111.0"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^1.0.0"
