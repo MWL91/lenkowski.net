@@ -167,40 +167,31 @@ export default {
             this.renderer.render( this.scene, this.camera );
         },
 
-        animateForward(mesh, forward = 0.05, rotate = 0.00626) {
+        animateForward(mesh, forward = 0.05, radius = 5) {
             const animateForward = this.animateForward;
             this.animateRequest = requestAnimationFrame( function() {
                 animateForward(mesh);
             } );
 
-            this.setCarStep(mesh, forward, rotate);
+            this.setCarStep(mesh, forward, radius);
         },
 
-        animateBackward(mesh, forward = -0.05, rotate = -0.00626) {
+        animateBackward(mesh, forward = -0.05, radius = 5) {
             const animateBackward = this.animateBackward;
             this.animateRequest = requestAnimationFrame( function() {
                 animateBackward(mesh);
             } );
 
-            this.setCarStep(mesh, forward, rotate);
+            this.setCarStep(mesh, forward, radius);
         },
 
-        setCarStep(mesh, forward, rotate) {
+        setCarStep(mesh, forward, length) {
             this.pos += forward;
-            // mesh.rotation.y = this.pos;
 
-            
-            mesh.position.z = (Math.abs((1 / Math.tan(this.pos))));
-            mesh.position.x = (-1 * (Math.tan(this.pos)));
+            mesh.rotation.y = -1 * ((Math.PI/180) * this.pos/(Math.PI/180) % 360);
+            mesh.position.z = (Math.sin(this.pos) * length);
+            mesh.position.x = (Math.cos(this.pos) * length);
 
-            /**
-             * Po osiągnięciu określonego punktu nalezy zamienić ze sobą tangens z cotangensem (zmiana znaku)
-             */
-
-
-            console.log([Math.atan(this.pos)]);
-            // console.log(mesh.position.x);
-            // mesh.rotation.y += rotate;
         
             this.renderer.render( this.scene, this.camera );
         }

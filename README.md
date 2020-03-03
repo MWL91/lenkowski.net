@@ -1,8 +1,10 @@
 # lenkowski.net
 
-> My perfect Nuxt.js project
+## Notatki
 
-## Build Setup
+https://gamedevelopment.tutsplus.com/tutorials/creating-a-simple-3d-physics-game-using-threejs-and-physijs--cms-29453
+
+## Nuxt
 
 ``` bash
 # install dependencies
