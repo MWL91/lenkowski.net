@@ -116,11 +116,11 @@ export default {
             var loader = new GLTFLoader();
             let self = this;
 
+            // let light = new THREE.AmbientLight( 0x00FFFF ); // soft white light
             let light = new THREE.DirectionalLight( 0xffffff, 1 );
-            light.position.set(5,10,5);
             this.scene.add( light );
 
-            loader.load( 'glb/cars/jeep/renegade2016.glb', function ( gltf ) {
+            loader.load( 'glb/duck.glb', function ( gltf ) {
                 gltf.scene.position.z = -5;
                 gltf.scene.position.y = -2;
                 self.scene.add( gltf.scene );
